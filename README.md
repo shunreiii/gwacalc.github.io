@@ -1,16 +1,35 @@
-# React + Vite
+# GWA Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page **General Weighted Average (GWA) Calculator** built with React. Enter how many subjects you're taking, fill in each subject's details, and get your GWA instantly, with smooth animations and a light/dark theme toggle.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Step-by-step flow**: enter your number of subjects, fill in the generated form, then view your result
+- **Dynamic form**: one row per subject with three fields: Course Name, Units, and Grade
+- **Instant computation**: shows your GWA with a breakdown of total units and total weighted points
+- **Dark mode toggle**: switch themes with a smooth transition
+- **Fluid animations**: step transitions, staggered row entrances, hover/focus effects, and an animated GWA count-up
+- **Input validation**: inline error messages for empty or invalid fields
+- **Responsive**: the 3-column layout collapses gracefully on small screens
+- **Reset button**: start over at any time
 
-## React Compiler
+## Formula
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+GWA = Σ(Grade × Units) ÷ Σ(Units)
+```
 
-## Expanding the ESLint configuration
+## Design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The interface follows the 60-30-10 color rule:
+
+| Role | Color | Hex |
+|------|-------|-----|
+| 60% Dominant | Gunmetal Night | `#1F262D` |
+| 30% Secondary | Fog Silver | `#C9CED3` |
+| 10% Accent | Molten Orange | `#FF5A1F` |
+
+## Tech Stack
+
+- React (functional components and hooks)
+- CSS (custom properties for theming)
